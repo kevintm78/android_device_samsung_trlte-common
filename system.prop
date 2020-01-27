@@ -67,11 +67,14 @@ sys.qca1530=detect
 # logd
 ro.logd.auditd.dmesg=false
 
+# Media
+debug.stagefright.ccodec=0
+
 # Memory optimizations
+ro.vendor.qti.am.reschedule_service=true
 ro.vendor.qti.sys.fw.bservice_enable=true
 
 # Miracast (Wireless Display)
-
 wlan.wfd.hdcp=disable 
 persist.debug.wfd.enable=1 
 persist.sys.wfd.virtual=0

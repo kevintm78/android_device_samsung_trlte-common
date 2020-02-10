@@ -125,11 +125,7 @@ PRODUCT_PACKAGES += \
 # Fingerprint sensor
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service \
-    fingerprint.apq8084 \
-    ValidityService
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/validityservice/etc/permissions/privapp-permissions-validityservice.xml:system/etc/permissions/privapp-permissions-validityservice.xml \
+    fingerprint.apq8084
 
 # First Model API LEVEL
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_k.mk)

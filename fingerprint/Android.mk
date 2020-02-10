@@ -35,6 +35,6 @@ LOCAL_SHARED_LIBRARIES := \
         libsqlite
 
 LOCAL_MODULE_TAGS := optional
-LOCAL_VENDOR_MODULE := true
+LOCAL_PROPRIETARY_MODULE := true
 
 include $(BUILD_SHARED_LIBRARY)

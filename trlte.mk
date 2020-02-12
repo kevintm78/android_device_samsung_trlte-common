@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2017 The LineageOS Project
+# Copyright (C) 2017-2020 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -26,9 +26,9 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
     $(LOCAL_PATH)/overlay-lineage
 
-ifneq ($(RR_BUILD),)
+ifneq ($(GZOSP_BUILD),)
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-rr
+    $(LOCAL_PATH)/overlay-gzosp
 endif
 
 # Device uses high-density artwork where available
@@ -75,8 +75,8 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml
 
 # Advanced Display
-PRODUCT_PACKAGES += \
-    AdvancedDisplay
+#PRODUCT_PACKAGES += \
+#    AdvancedDisplay
 
 # Bluetooth
 PRODUCT_PACKAGES += \
@@ -97,7 +97,6 @@ PRODUCT_PACKAGES += \
     camera.device@1.0-impl \
     camera.apq8084 \
     libxml2 \
-    snap
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/external_camera_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/external_camera_config.xml
@@ -203,8 +202,8 @@ PRODUCT_PACKAGES += \
     lights.APQ8084
 
 # LiveDisplay
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service.apq8084
+#PRODUCT_PACKAGES += \
+#    vendor.lineage.livedisplay@2.0-service.apq8084
 
 # Media
 PRODUCT_PACKAGES += \
@@ -319,8 +318,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/_hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/_hals.conf
 
 # Touch
-PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.samsung
+#PRODUCT_PACKAGES += \
+#    vendor.lineage.touch@1.0-service.samsung
 
 # Thermal engine
 PRODUCT_COPY_FILES += \

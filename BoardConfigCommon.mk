@@ -39,6 +39,9 @@ USE_XML_AUDIO_POLICY_CONF := 1
 # Binder API
 TARGET_USES_64_BIT_BINDER := true
 
+# Bionic
+MALLOC_SVELTE := true
+
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true

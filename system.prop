@@ -48,6 +48,8 @@ debug.gralloc.enable_fb_ubwc=0
 debug.hwui.use_buffer_age=false
 persist.hwc.enable_vds=false
 sdm.perf_hint_window=50
+debug.sf.latch_unsignaled=1
+debug.sf.disable_backpressure=1
 
 # Fingerprint
 fingerprint_enabled=1

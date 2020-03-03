@@ -120,6 +120,9 @@ subsystem msm_camera
 /dev/jpeg0                0660   system     camera
 /dev/jpeg1                0660   system     camera
 /dev/jpeg2                0660   system     camera
+/dev/mhi_pipe_14          0640   radio      radio
+/dev/mhi_pipe_16          0640   radio      radio
+/dev/mhi_pipe_32          0640   radio      radio
 /dev/msm_camera/*         0660   system     camera
 /dev/gemini/              0660   system     camera
 /dev/mercury0             0660   system     camera

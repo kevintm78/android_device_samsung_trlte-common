@@ -85,7 +85,8 @@ PRODUCT_PACKAGES += \
     bt_stack.conf \
     bt_did.conf \
     auto_pair_devlist.conf \
-    iot_devlist.conf
+    iot_devlist.conf \
+    libldacBT_dec
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/iop_bt.db:$(TARGET_COPY_OUT_SYSTEM)/etc/bluetooth/iop_bt.db \

@@ -149,7 +149,8 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
-    android.hardware.gnss@1.0-impl
+    android.hardware.gnss@1.0-impl \
+    libshim_loc
 
 # GPS
 PRODUCT_PACKAGES += \

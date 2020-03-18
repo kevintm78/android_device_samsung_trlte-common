@@ -75,8 +75,8 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml
 
 # Advanced Display
-PRODUCT_PACKAGES += \
-    AdvancedDisplay
+#PRODUCT_PACKAGES += \
+#    AdvancedDisplay
 
 # Bluetooth
 PRODUCT_PACKAGES += \
@@ -115,8 +115,8 @@ PRODUCT_PACKAGES += \
     memtrack.apq8084
 
 # Doze service
-PRODUCT_PACKAGES += \
-    SamsungDoze
+#PRODUCT_PACKAGES += \
+#    SamsungDoze
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -130,12 +130,6 @@ PRODUCT_PACKAGES += \
 
 # First Model API LEVEL
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_k.mk)
-    
-ifeq ($(filter trlte trltecan trlteduos trltespr trltetmo trlteusc trltevzw trltexx,$(TARGET_DEVICE)),)
-# FlipFlap
-PRODUCT_PACKAGES += \
-    FlipFlap
-endif
     
 # Graphics
 PRODUCT_PACKAGES += \
@@ -204,8 +198,8 @@ PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.samsung
 
 # LiveDisplay
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service.apq8084
+#PRODUCT_PACKAGES += \
+#    vendor.lineage.livedisplay@2.0-service.apq8084
 
 # Media
 PRODUCT_PACKAGES += \
@@ -319,8 +313,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/_hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/_hals.conf
 
 # Touch
-PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.samsung
+#PRODUCT_PACKAGES += \
+#    vendor.lineage.touch@1.0-service.samsung
 
 # Thermal engine
 PRODUCT_COPY_FILES += \
@@ -337,8 +331,8 @@ PRODUCT_PACKAGES += \
     TimeKeep
 
 # Trust HAL
-PRODUCT_PACKAGES += \
-    vendor.lineage.trust@1.0-service
+#PRODUCT_PACKAGES += \
+#    vendor.lineage.trust@1.0-service
 
 # USB
 PRODUCT_PACKAGES += \
@@ -346,7 +340,7 @@ PRODUCT_PACKAGES += \
 
 # Vendor security patch level
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.lineage.build.vendor_security_patch=2017-08-01
+    ro.aosip.build.vendor_security_patch=2017-08-01
 
 # Vibrator
 PRODUCT_PACKAGES += \

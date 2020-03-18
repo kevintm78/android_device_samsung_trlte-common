@@ -24,9 +24,9 @@ export INITIAL_COPYRIGHT_YEAR=2014
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
 
-CM_ROOT="$MY_DIR"/../../..
+AOSIP_ROOT="$MY_DIR"/../../..
 
-HELPER="$CM_ROOT"/vendor/lineage/build/tools/extract_utils.sh
+HELPER="$AOSIP_ROOT"/vendor/aosip/build/tools/extract_utils.sh
 if [ ! -f "$HELPER" ]; then
     echo "Unable to find helper script at $HELPER"
     exit 1
@@ -34,7 +34,7 @@ fi
 . "$HELPER"
 
 # Initialize the helper for common device
-setup_vendor "$DEVICE_COMMON" "$VENDOR" "$CM_ROOT" true
+setup_vendor "$DEVICE_COMMON" "$VENDOR" "$AOSIP_ROOT" true
 
 # Copyright headers and common guards
 write_headers "trlte trlteduos trltespr trltetmo trltevzw trltexx tblte tblteduos tbltespr tbltetmo tbltevzw tbltexx"
@@ -44,7 +44,7 @@ write_makefiles "$MY_DIR"/common-proprietary-files.txt
 write_footers
 
 # Reinitialize the helper for device
-setup_vendor "$DEVICE" "$VENDOR" "$CM_ROOT"
+setup_vendor "$DEVICE" "$VENDOR" "$AOSIP_ROOT"
 
 # Copyright headers and guards
 write_headers

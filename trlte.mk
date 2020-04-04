@@ -24,12 +24,7 @@ $(call inherit-product-if-exists, vendor/samsung/trlte-common/trlte-common-vendo
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lineage
-
-ifneq ($(RR_BUILD),)
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-rr
-endif
+    $(LOCAL_PATH)/overlay-aicp
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal
@@ -75,8 +70,8 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml
 
 # Advanced Display
-PRODUCT_PACKAGES += \
-    AdvancedDisplay
+#PRODUCT_PACKAGES += \
+#    AdvancedDisplay
 
 # Bluetooth
 PRODUCT_PACKAGES += \
@@ -114,8 +109,8 @@ PRODUCT_PACKAGES += \
     memtrack.apq8084
 
 # Doze service
-PRODUCT_PACKAGES += \
-    SamsungDoze
+#PRODUCT_PACKAGES += \
+#    SamsungDoze
 
 # DRM
 PRODUCT_PACKAGES += \

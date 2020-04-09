@@ -1276,13 +1276,13 @@ service loc_launcher /system/vendor/bin/loc_launcher
 service macloader /system/vendor/bin/macloader
     class late_start
     oneshot
-    seclabel u:r:macloader:s0
+    seclabel u:object_r:macloader:s0
 
 # Run deferred initcalls of builtin kernel modules (bcmdhd)
 service wifiloader /system/bin/wifiloader
      class main
      oneshot
-     seclabel u:r:wifiloader:s0
+     seclabel u:object_r:wifiloader:s0
 
 on property:init.svc.macloader=stopped
     chown system root /data/.cid.info
@@ -1299,7 +1299,7 @@ on property:crypto.driver.load=0
     exec /system/bin/rmmod qce.ko
 
 on property:sys.boot_completed=1
-    write /sys/block/mmcblk0/queue/scheduler cfq
+    write /sys/block/mmcblk0/queue/scheduler bfq
 
     # Enable ZRAM on boot_completed
     swapon_all /vendor/etc/fstab.qcom
@@ -1344,7 +1344,7 @@ service charger /system/bin/charger
     user system
     group system graphics input
     capabilities SYS_BOOT
-    seclabel u:r:charger:s0
+    seclabel u:object_r:charger:s0
 
 service sec-sh /system/vendor/bin/sh /system/vendor/etc/init.sec.boot.sh
     class main

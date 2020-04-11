@@ -119,8 +119,6 @@ BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_RAMDISK_OFFSET     := 0x02600000
 BOARD_KERNEL_TAGS_OFFSET := 0x02400000
 BOARD_SECOND_OFFSET      := 0x00f00000
-KERNEL_TOOLCHAIN := $(TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-7.4/bin
-KERNEL_TOOLCHAIN_PREFIX := arm-eabi-
 
 
 # Legacy BLOB Support

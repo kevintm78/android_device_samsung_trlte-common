@@ -45,7 +45,7 @@ write_footers
 
 # Reinitialize the helper for device
 setup_vendor "$DEVICE" "$VENDOR" "$AICP_ROOT"
-repo sync --no-tags --no-clone-bundle
+
 # Copyright headers and guards
 write_headers
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Copyright (C) 2016 The CyanogenMod Project
-# Copyright (C) 2017-2018 The LineageOS Project
+# Copyright (C) 2017-2020 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -22,9 +22,9 @@ set -e
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
 
-CM_ROOT="$MY_DIR"/../../..
+AICP_ROOT="$MY_DIR"/../../..
 
-HELPER="$CM_ROOT"/vendor/lineage/build/tools/extract_utils.sh
+HELPER="$AICP_ROOT"/vendor/aicp/build/tools/extract_utils.sh
 if [ ! -f "$HELPER" ]; then
     echo "Unable to find helper script at $HELPER"
     exit 1
@@ -48,12 +48,12 @@ else
 fi
 
 # Initialize the helper for common device
-setup_vendor "$DEVICE_COMMON" "$VENDOR" "$CM_ROOT" true
+setup_vendor "$DEVICE_COMMON" "$VENDOR" "$AICP_ROOT" true
 
 extract "$MY_DIR"/common-proprietary-files.txt "$SRC"
 
 # Reinitialize the helper for device
-setup_vendor "$DEVICE" "$VENDOR" "$CM_ROOT"
+setup_vendor "$DEVICE" "$VENDOR" "$AICP_ROOT"
 
 for BLOB_LIST in "$MY_DIR"/../$DEVICE/device-proprietary-files*.txt; do
     extract $BLOB_LIST "$SRC"

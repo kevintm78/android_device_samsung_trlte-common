@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2017 The LineageOS Project
+# Copyright (C) 2017-2020 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -75,8 +75,8 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml
 
 # Advanced Display
-PRODUCT_PACKAGES += \
-    AdvancedDisplay
+#PRODUCT_PACKAGES += \
+#    AdvancedDisplay
 
 # Bluetooth
 PRODUCT_PACKAGES += \

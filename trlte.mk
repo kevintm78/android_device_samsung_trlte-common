@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2017 The LineageOS Project
+# Copyright (C) 2017-2021 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -23,13 +23,7 @@ $(call inherit-product-if-exists, vendor/samsung/trlte-common/trlte-common-vendo
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lineage
-
-ifneq ($(RR_BUILD),)
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-rr
-endif
+    $(LOCAL_PATH)/overlay
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal
@@ -162,10 +156,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/izat.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/izat.conf \
     $(LOCAL_PATH)/configs/sap.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/sap.conf
 
-# Health
-PRODUCT_PACKAGES += \
-   android.hardware.health@2.0-service.samsung8084
-
 # IR Blaster
 PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl \
@@ -201,10 +191,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-impl.samsung \
     android.hardware.light@2.0-service.samsung
-
-# LiveDisplay
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service.apq8084
 
 # Media
 PRODUCT_PACKAGES += \
@@ -310,10 +296,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/seccomp/mediacodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy
 
 # Sensors
-PRODUCT_PACKAGES += \
-    android.hardware.sensors@1.0-impl.samsung8084 \
-    android.hardware.sensors@1.0-service.samsung8084
-
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/_hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/_hals.conf
 
@@ -321,10 +303,6 @@ PRODUCT_COPY_FILES += \
 # Surfaceflinger
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.max_frame_buffer_acquired_buffers=3
-
-# Touch
-PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.samsung
 
 # Thermal engine
 PRODUCT_COPY_FILES += \
@@ -340,21 +318,9 @@ PRODUCT_PACKAGES += \
     timekeep \
     TimeKeep
 
-# Trust HAL
-PRODUCT_PACKAGES += \
-    vendor.lineage.trust@1.0-service
-
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service.basic
-
-# Vendor security patch level
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.lineage.build.vendor_security_patch=2017-08-01
-
-# Vibrator
-PRODUCT_PACKAGES += \
-    android.hardware.vibrator@1.0-service.lineage
 
 # Wifi
 PRODUCT_PACKAGES += \

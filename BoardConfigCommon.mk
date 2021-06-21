@@ -180,7 +180,7 @@ LZMA_RAMDISK_TARGETS := recovery
 TARGET_NO_SENSOR_PERMISSION_CHECK := true
 
 # SELinux
-include device/qcom/sepolicy-legacy/sepolicy.mk
+include device/qcom/sepolicy/SEPolicy.mk
 
 BOARD_VENDOR_SEPOLICY_DIRS += \
     $(COMMON_PATH)/sepolicy

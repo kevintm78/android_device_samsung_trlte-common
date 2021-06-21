@@ -19,6 +19,8 @@
 
 COMMON_PATH := device/samsung/trlte-common
 
+BUILD_BROKEN_DUP_RULES := true
+
 # Architecture
 TARGET_CPU_VARIANT := generic
 TARGET_CPU_VARIANT_RUNTIME := krait
@@ -99,6 +101,7 @@ TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 TARGET_HW_DISK_ENCRYPTION := false
 TARGET_HW_DISK_ENCRYPTION_PERF := false
 TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
+BOARD_ROOT_EXTRA_FOLDERS := firmware firmware-modem efs persist
 
 # HIDL
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest.xml
@@ -133,15 +136,8 @@ TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
     /system/vendor/bin/mm-qcamera-daemon=22 \
     /system/vendor/bin/hw/rild=27
 
-TARGET_LD_SHIM_LIBS := \
-    /system/vendor/lib/libsec-ril.so|/system/vendor/lib/libprotobuf-cpp-full.so \
-    /system/vendor/lib/libloc_eng.so|/system/lib/libshim_loc.so
-
-# Legacy memfd
-TARGET_HAS_MEMFD_BACKPORT := true
-
-# Low memory devices
-MALLOC_SVELTE := true
+# Samsunghw
+JAVA_SOURCE_OVERLAYS := com.samsung.hardware|$(DEVICE_PATH)/samsunghw|**/*.java
 
 # Media
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
@@ -180,10 +176,10 @@ LZMA_RAMDISK_TARGETS := recovery
 TARGET_NO_SENSOR_PERMISSION_CHECK := true
 
 # SELinux
-include device/qcom/sepolicy/SEPolicy.mk
-
-BOARD_VENDOR_SEPOLICY_DIRS += \
-    $(COMMON_PATH)/sepolicy
+#include device/qcom/sepolicy-legacy/sepolicy.mk
+BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/temp
+#BOARD_SEPOLICY_DIRS += \
+#    $(COMMON_PATH)/sepolicy
 
 # Wifi
 BOARD_HAVE_SAMSUNG_WIFI := true
